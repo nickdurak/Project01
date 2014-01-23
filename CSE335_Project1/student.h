@@ -22,17 +22,21 @@
 using namespace std;
 
 /**
-*   
+    Student
+    Purpose: create a student
 */
 class Student
 {
 public:
     
-    /*
-     *  constructor for student
+    /**
+        constructor for student
      */
     Student(int studentID = 0, string name = "", int year = 0, float grade = 0.0);
     
+    /**
+        print data stored in student
+     */
     virtual void print();
     
 protected:
@@ -48,14 +52,15 @@ class UndergradStudent: public Student
 {
 public:
     
-    /*
-     *  constructor for UndergradStudent
+    /**
+        constructor for UndergradStudent
      */
     UndergradStudent(int studentID, string name, int year, float grade, string major, string minor);
     
-    ~UndergradStudent();
-    
-    void print();
+    /**
+        print data stored in UndergradStudent
+     */
+    virtual void print();
     
 private:
     string m_major;
@@ -69,9 +74,15 @@ class GraduateStudent: public Student
 {
 public:
     
+    /**
+        constructor for GraduateStudent
+     */
     GraduateStudent(int studentID, string name, int year, float grade, string dep, string advisor);
     
-    void print();
+    /**
+        print data stored in GraduateStudent
+     */
+    virtual void print();
     
 private:
     string m_dep;
